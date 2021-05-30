@@ -1,7 +1,7 @@
 :root{
     /*size*/
     --margin-bottom : 10px;
-    --base-padding : 25px;
+    --base-padding : 18px;
     --base-border : 5px;
     --select-padding : 7px;
 
@@ -72,12 +72,20 @@ button {
 
 .select_exercise-kinds{
     margin : auto;
+    width: 40px;
+    height: 40px;
 }
 
 .select_exercise-list{
     overflow-y: scroll;
     height: 150px;
     
+
+}
+
+.seclect_exercise{
+    border-bottom: 1px solid var(--color-placeholder);
+    padding : 10px;
 
 }
 
