@@ -14,4 +14,4 @@ loadItems()
     //displayExercise(exercise)   //전달받은 것을 나타내주는 함수
     //setEventListeners(exercise) //받아온 exercise들을 버튼을 누르면 필터링을 추가하는 함수
 })
-.catch(console.log) 
+.catch(console.log)
