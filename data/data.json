@@ -1,0 +1,12 @@
+{
+    "exercise":[
+        { "type" : "foot" , "name" : "⚽️ 축구"},
+        { "type" : "hand" , "name" : "⚾️ 야구"},
+        { "type" : "stick" , "name" : "🎾 테니스"},
+        { "type" : "stick" , "name" : "🏓 탁구"},
+        { "type" : "stick" , "name" : "🏸 배드민턴"},
+        { "type" : "stick" , "name" : "🏒 하키"},
+        { "type" : "foot" , "name" : "⛷ 스키"},
+        { "type" : "hand" , "name" : "🏌🏼‍♀️ 골프"}
+    ]
+}
