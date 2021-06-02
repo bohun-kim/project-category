@@ -14,11 +14,27 @@
         <h1 class = "main-container_title">그 날의 운동🏌🏻‍♂️</h1>
         <section class = "main-container_seclet">
             <form class = "select_category-container">
-                <div class = "choice-exercise">
-                    <button class="select_exercise-kinds hand" type="button" data-key="type" data-value="hand">✋🏼</button>
-                    <button class="select_exercise-kinds foot" type="button" data-key="type" data-value="foot">🦶🏼</button>
-                    <button class="select_exercise-kinds stick" type="button" data-key="type" data-value="stick">🏏</button>
-                </div>
+                <div class="dropdown">
+                <button class = "select_dropdown" type="button">
+                   전체보기
+                </button>
+                <ul class = "select_categories">
+                  <li class="select_category">
+                      <button class = "selet-btn" type="button">✋🏼 손
+                      </button>
+                  </li>
+                  <li class="select_category">
+                      <button class = "selet-btn" type="button">🦶🏼 발
+                </button>
+                  </li>
+                  <li class="select_category">
+                      <button class = "selet-btn" type="button">🏏 막대기
+                </button>
+                 </li>
+                </ul>
+            </div>
+
+
                     <ul class = "select_exercise-list">
                     </ul>
             </form>

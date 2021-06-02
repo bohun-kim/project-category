@@ -6,7 +6,7 @@
 function loadItems(){
     return fetch('data/data.json')
     .then(response => response.json())
-    .then(json => json.exercise);   //json전체를 리턴하는 것이 아니기 때문에 exercise만 리턴
+    .then(json => json.exercise); //data.json안에 exercise만 추출
 }
 
 // json데이터를 string형식의 데이터로 변환 후 화면에 송출
@@ -23,32 +23,36 @@ function loadItems(){
         `
     }
 
-// 필터링 효과
-function onButtonClick(event,exercise){
-        const dataset = event.target.dataset //버튼을 눌렀을 때 type 설정하면 hand
-        const key = dataset.key; 
-        const value = dataset.value;
+    //카테고리 변수 설정                           
+    const dropdown = document.querySelector(".dropdown"); //div
+    const categoryContainer = document.querySelectorAll(".select_categories") //ul
+    const toggleBtn = document.querySelector(".select_dropdown") //button
+    
+    toggleBtn.addEventListener('click',function(){
+        categoryContainer.classList.toggle('show')
+    })
 
-        if(key == null || value == null){
-            return;
-        }
-        const filtered = exercise.filter( x => x[key] === value);
-        displayExercise(filtered)
-        console.log(filtered)
-        console.log(dataset)
-    }
-
-
+    //클릭시 리스트 이벤트
     function setEventListeners(exercise){
         const logo = document.querySelector('.main-container_title');
-        const button = document.querySelector('.choice-exercise');
         logo.addEventListener('click', () => displayExercise(exercise));
         button.addEventListener('click', event => onButtonClick(event, exercise));
     }
 
+    // 필터링 효과
+    function onButtonClick(event,exercise){
+        const dataset = event.target.dataset //버튼을 눌렀을 때 type 설정하면 hand
+        const key = dataset.key; 
+        const value = dataset.value;
+    
+        const filtered = exercise.filter( x => x[key] === value);
+        displayExercise(filtered)             //x[key] = "type : foot" === value = html 안에 있는 data-value
+    }                                         //아이템 오브젝트안에  key에 해당하는 값이 원하는 value와 똑같은 아이들만 전달
+    
+
 // main
 loadItems()
 .then(exercise => {
-    displayExercise(exercise)        //전달받은 것을 나타내주는 함수
-    setEventListeners(exercise)    //받아온 exercise들을 버튼을 누르면 필터링을 추가하는 함수
+    displayExercise(exercise)       //전달받은 것을 나타내주는 함수
+    //setEventListeners(exercise)    //받아온 exercise들을 버튼을 누르면 필터링을 추가하는 함수
 })
