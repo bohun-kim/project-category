@@ -8,6 +8,7 @@
     /*color*/
     --color-placeholder: rgba(133, 136, 150, 0.5);
     --color-border: rgba(133, 136, 150, 0.5);
+    --color-white : #F7FCFF;
 }
 *{
     box-sizing: border-box;
@@ -51,13 +52,6 @@ button {
     display: flex;
 }
 
-.hand:hover,
-.foot:hover,
-.stick:hover {
-    transform: scale(1.1);
-    transition : transform 300ms ease;
-}
-
 .select_exercise-kinds{
     border : 1px solid var(--color-border);
     border-radius: var(--base-border);
@@ -79,13 +73,13 @@ button {
 .select_exercise-list{
     overflow-y: scroll;
     height: 150px;
+    margin-top: 15px;
     
-
 }
 
 .seclect_exercise{
     border-bottom: 1px solid var(--color-placeholder);
-    padding : 10px;
+    padding : 15px;
     font-size: 0.9rem;
     cursor: pointer;
 
@@ -110,14 +104,22 @@ button {
     position: absolute;
     margin-top: 10px;
     width: 100%;
-    
-    transition: max-height 300ms ease;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 200ms ease;
     z-index: 2;
     top: 30px;
+    
 }
 
-.select_categories .show {
-    background-color: yellow;
+.show {
+    max-height: 300px;
+    border: 1px solid var(--color-placeholder);
+    background-color: var(--color-white);
+}
+
+.select_category {
+    padding: var(--select-padding);
 }
 
 .selet-btn {
@@ -125,5 +127,8 @@ button {
     margin-top: 5px;
     background: none;
     border : none;
-    overflow: hidden;
+}
+
+.select_dropdown.selected{
+    color: green;
 }

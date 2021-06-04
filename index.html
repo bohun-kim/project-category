@@ -7,7 +7,6 @@
     <title>그 날의 운동🏌🏻‍♂️</title>
     <link rel="stylesheet" href="css/category.css">
     <link rel="stylesheet" href="css/reset.css">
-    <script src="main.js" defer></script>
 </head>
 <body>
     <main class = "main-container">
@@ -19,26 +18,29 @@
                    전체보기
                 </button>
                 <ul class = "select_categories">
+                    <li class="select_category">
+                        <button class = "selet-btn" type="button">전체보기
+                        </button>
+                    </li>
                   <li class="select_category">
-                      <button class = "selet-btn" type="button">✋🏼 손
+                      <button class = "selet-btn" type="button" data-key="type" data-value="hand">✋🏼 손
                       </button>
                   </li>
                   <li class="select_category">
-                      <button class = "selet-btn" type="button">🦶🏼 발
+                      <button class = "selet-btn" type="button" data-key="type" data-value="foot">🦶🏼 발
                 </button>
                   </li>
                   <li class="select_category">
-                      <button class = "selet-btn" type="button">🏏 막대기
+                      <button class = "selet-btn" type="button" data-key="type" data-value="stick">🏏 막대기
                 </button>
                  </li>
                 </ul>
             </div>
-
-
                     <ul class = "select_exercise-list">
                     </ul>
             </form>
         </section>
     </main>
+    <script src="src/main.js"></script>
 </body>
 </html>
