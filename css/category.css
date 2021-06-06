@@ -112,7 +112,7 @@ button {
     
 }
 
-.show {
+.select_categories.show {
     max-height: 300px;
     border: 1px solid var(--color-placeholder);
     background-color: var(--color-white);

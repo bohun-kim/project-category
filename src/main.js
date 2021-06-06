@@ -28,13 +28,17 @@ function loadItems(){
     const categoryContainer = document.querySelector(".select_categories"); //ul
     const toggleBtn = document.querySelector(".select_dropdown"); //button
     const selectBtn = document.querySelector(".selet-btn"); //ul>li>button
+    const li = document.querySelector(".select_category"); //li
 
-    drop.addEventListener("mousedown", (e) => {
+
+    toggleBtn.addEventListener("mousedown", (e) => {
         const target = e.target
         if(target.classList.contains("select_dropdown")){
             dropMenu();
-        } else if(target.classList.contains("selet-btn")){
+        } else if(target.classList.contains("select_category")){
+            dropMenu();
             selectMenu(target);
+            console.log('zzz')
         }
     })
 
@@ -42,24 +46,26 @@ function loadItems(){
     function dropMenu(){
         categoryContainer.classList.toggle("show");
     }
-
-    //선택한 운동 버튼에 보이기
-    function selectMenu(category){
-        toggleBtn.innerHTML = category.innerHTML;
-        toggleBtn.classList.add('selected')
-    }
-
-    //블러효과
-    toggleBtn.addEventListener('blur', () => {
-         categoryContainer.classList.remove('show')
+/*
+    //블러
+    toggleBtn.addEventListener("blur", () => {
+        categoryContainer.classList.remove('show')
     })
+    */
+
+
+  //카테고리 설정
+    function selectMenu(category){
+        
+        toggleBtn.innerHTML = category.innerHTML;
+        toggleBtn.classList.add('selected');
+    }
 
     //클릭시 리스트 이벤트
     function setEventListeners(exercise){
         const logo = document.querySelector('.main-container_title');
-        
         logo.addEventListener('click', () => displayExercise(exercise));
-        drop.addEventListener('click', event => onButtonClick(event, exercise));
+        categoryContainer.addEventListener('click', event => onButtonClick(event, exercise));
     }
 
     
@@ -68,15 +74,15 @@ function loadItems(){
         const dataset = event.target.dataset //버튼을 눌렀을 때 type 설정하면 hand
         const key = dataset.key; 
         const value = dataset.value;
-        console.log(value)
-        const filtered = exercise.filter( x => x[key] === value);
-        displayExercise(filtered)             //x[key] = "type : foot" === value = html 안에 있는 data-value
-    }                                         //아이템 오브젝트안에  key에 해당하는 값이 원하는 value와 똑같은 아이들만 전달
-    
+        const filtered = exercise.filter(e => e[key] === value);
+        displayExercise(filtered)
+        console.log(filtered)
+        console.log(dataset)
+    };
 
 // main
 loadItems()
 .then(exercise => {
-    displayExercise(exercise)       //전달받은 것을 나타내주는 함수
-    setEventListeners(exercise)    //받아온 exercise들을 버튼을 누르면 필터링을 추가하는 함수
-})
+    displayExercise(exercise)     
+    setEventListeners(exercise)    
+});
