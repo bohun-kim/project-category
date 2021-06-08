@@ -9,8 +9,11 @@
     --color-placeholder: rgba(133, 136, 150, 0.5);
     --color-border: rgba(133, 136, 150, 0.5);
     --color-white : #F7FCFF;
+    --color-button-disable: #e0e2e7;
+
 }
-*{
+*
+{
     box-sizing: border-box;
 }
 
@@ -131,4 +134,25 @@ button {
 
 .select_dropdown.selected{
     color: green;
+}
+
+
+button:focus {
+    border: 1px solid red;
+}
+
+/* 최종 버튼 */
+.last-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.last-button_exercise{
+    width: 100%;
+    margin-top: -8px;
+    padding: 10px;
 }

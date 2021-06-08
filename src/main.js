@@ -9,9 +9,10 @@ function loadItems(){
     .then(json => json.exercise); //data.json안에 exercise만 추출
 }
 
+const container = document.querySelector('.select_exercise-list')
+
 // json데이터를 string형식의 데이터로 변환 후 화면에 송출
     function displayExercise(exercise){
-        const container = document.querySelector('.select_exercise-list')
         container.innerHTML = exercise.map(exercise => createHTMLString(exercise)).join('');
     }
 
@@ -27,8 +28,8 @@ function loadItems(){
     const drop = document.querySelector(".dropdown"); //div
     const categoryContainer = document.querySelector(".select_categories"); //ul
     const toggleBtn = document.querySelector(".select_dropdown"); //button
-    const selectBtn = document.querySelector(".selet-btn"); //ul>li>button
-    const li = document.querySelector(".select_category"); //li
+    const selectBtn = document.querySelectorAll(".selet-btn"); //ul>li>button
+    const next = document.querySelector(".last-button_exercise")
 
 
     toggleBtn.addEventListener("mousedown", (e) => {
@@ -36,9 +37,7 @@ function loadItems(){
         if(target.classList.contains("select_dropdown")){
             dropMenu();
         } else if(target.classList.contains("select_category")){
-            dropMenu();
             selectMenu(target);
-            console.log('zzz')
         }
     })
 
@@ -46,20 +45,21 @@ function loadItems(){
     function dropMenu(){
         categoryContainer.classList.toggle("show");
     }
-/*
-    //블러
-    toggleBtn.addEventListener("blur", () => {
-        categoryContainer.classList.remove('show')
-    })
-    */
-
-
-  //카테고리 설정
-    function selectMenu(category){
-        
-        toggleBtn.innerHTML = category.innerHTML;
+ 
+//카테고리 설정
+selectBtn.forEach(function(category){
+    category.addEventListener('click', function(e){
+        const value = e.currentTarget.innerHTML.trim()
+        toggleBtn.textContent = value;
         toggleBtn.classList.add('selected');
-    }
+        next.removeAttribute('disabled')
+    })
+})
+
+//블러
+toggleBtn.addEventListener("blur", () => {
+    categoryContainer.classList.remove('show')
+})
 
     //클릭시 리스트 이벤트
     function setEventListeners(exercise){
@@ -79,6 +79,11 @@ function loadItems(){
         console.log(filtered)
         console.log(dataset)
     };
+
+    //메뉴 선택시 버튼 활성황
+    container.addEventListener('click', (x) => {
+        next.removeAttribute('disabled')
+    })
 
 // main
 loadItems()
