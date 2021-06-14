@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>그 날의 운동🏌🏻‍♂️</title>
-    <link rel="stylesheet" href="css/category.css">
-    <link rel="stylesheet" href="css/reset.css">
-</head>
-<body>
-    <main class = "main-container">
-        <h1 class = "main-container_title">그 날의 운동🏌🏻‍♂️</h1>
-        <section class = "main-container_seclet">
-            <form class = "select_category-container">
-                <div class="dropdown">
-                <button class = "select_dropdown" type="button">
-                   전체보기
+    <link rel="stylesheet" href="css/category.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+  </head>
+  <body>
+    <main class="main-container">
+      <h1 class="main-container_title">그 날의 운동🏌🏻‍♂️</h1>
+      <section class="main-container_seclet">
+        <form class="select_category-container">
+          <div class="dropdown">
+            <button class="select_dropdown" type="button">전체보기</button>
+            <ul class="select_categories">
+              <li class="select_category">
+                <button class="select-btn" type="button">전체보기</button>
+              </li>
+              <li class="select_category">
+                <button
+                  class="select-btn"
+                  type="button"
+                  data-key="type"
+                  data-value="hand"
+                >
+                  ✋🏼 손
                 </button>
-                <ul class = "select_categories">
-                    <li class="select_category">
-                        <button class = "selet-btn" type="button">전체보기
-                        </button>
-                    </li>
-                  <li class="select_category">
-                      <button class = "selet-btn" type="button" data-key= "type" data-value="hand">✋🏼 손
-                      </button>
-                  </li>
-                  <li class="select_category">
-                      <button class = "selet-btn" type="button" data-key="type" data-value="foot">🦶🏼 발
+              </li>
+              <li class="select_category">
+                <button
+                  class="select-btn"
+                  type="button"
+                  data-key="type"
+                  data-value="foot"
+                >
+                  🦶🏼 발
                 </button>
-                  </li>
-                  <li class="select_category">
-                      <button class = "selet-btn" type="button" data-key="type" data-value="stick">🏏 막대기
+              </li>
+              <li class="select_category">
+                <button
+                  class="select-btn"
+                  type="button"
+                  data-key="type"
+                  data-value="stick"
+                >
+                  🏏 막대기
                 </button>
-                 </li>
-                </ul>
+              </li>
+            </ul>
+          </div>
 
-            </div>
-                    <ul class = "select_exercise-list">
-                    </ul>
+          <ul class="select_exercise-list"></ul>
 
-            <div class="last-button">
-             <button class="last-button_exercise" type = "button" disabled="disabled">
-                운동하러가기
+          <div class="last-button">
+            <button
+              class="last-button_exercise"
+              type="button"
+              disabled="disabled"
+            >
+              운동하러가기
             </button>
-            </div>
-            </form>
-        </section>
+          </div>
+        </form>
+      </section>
     </main>
     <script src="src/main.js"></script>
-</body>
+  </body>
 </html>

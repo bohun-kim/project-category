@@ -1,12 +1,12 @@
 {
-    "exercise":[
-        { "people" : "many" , "type" : "foot" , "name" : "⚽️ 축구"},
-        { "people" : "many" , "type" : "hand" , "name" : "⚾️ 야구"},
-        { "people" : "middle" ,"type" : "stick" , "name" : "🎾 테니스"},
-        { "people" : "middle" , "type" : "stick" , "name" : "🏓 탁구"},
-        { "people" : "middle" , "type" : "stick" , "name" : "🏸 배드민턴"},
-        { "people" : "small" , "type" : "stick" , "name" : "🏒 하키"},
-        { "people" : "small" , "type" : "foot" , "name" : "⛷ 스키"},
-        { "people" : "small" , "type" : "hand" , "name" : "🏌🏼‍♀️ 골프"}
-    ]
+  "exercise": [
+    { "people": "many", "type": "foot", "name": "⚽️ 축구" },
+    { "people": "many", "type": "hand", "name": "⚾️ 야구" },
+    { "people": "middle", "type": "stick", "name": "🎾 테니스" },
+    { "people": "middle", "type": "stick", "name": "🏓 탁구" },
+    { "people": "middle", "type": "stick", "name": "🏸 배드민턴" },
+    { "people": "small", "type": "stick", "name": "🏒 하키" },
+    { "people": "small", "type": "foot", "name": "⛷ 스키" },
+    { "people": "small", "type": "hand", "name": "🏌🏼‍♀️ 골프" }
+  ]
 }
